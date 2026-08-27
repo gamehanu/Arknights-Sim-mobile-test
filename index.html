@@ -5940,6 +5940,281 @@ body.mobile-edition .mobile-sim-action-row .selection-summary {
 	}
 }
 
+
+/* ===== 모바일 v1.2: 맹약 선택식 자동 밴 + 결과 가독성 ===== */
+body.mobile-edition .mobile-selection-dock .mobile-dock-ban {
+	min-width: 72px !important;
+	border-color: rgba(239, 107, 115, .78) !important;
+	background: rgba(83, 22, 29, .82) !important;
+	box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 4px 12px rgba(91,25,31,.20);
+}
+body.mobile-edition .mobile-selection-dock .mobile-dock-ban span {
+	color: #ffe0e3 !important;
+	font-size: 13px !important;
+	font-weight: 1000 !important;
+	letter-spacing: -.02em;
+}
+body.mobile-edition .mobile-selection-dock .mobile-dock-ban strong {
+	display: inline-grid;
+	place-items: center;
+	min-width: 22px;
+	height: 22px;
+	padding: 0 5px;
+	border-radius: 999px;
+	background: rgba(255, 195, 201, .14);
+	color: #ffb2b9 !important;
+	font-size: 11px !important;
+	font-weight: 1000;
+}
+body.mobile-edition .mobile-selection-dock .mobile-dock-ban strong[hidden] {
+	display: none !important;
+}
+
+body.mobile-edition .ban-screen {
+	padding: 0 9px calc(18px + env(safe-area-inset-bottom));
+}
+body.mobile-edition .ban-screen-head {
+	margin: 0 -9px 8px;
+	padding: calc(10px + env(safe-area-inset-top)) 11px 9px;
+}
+body.mobile-edition .ban-screen-title h2 {
+	font-size: 21px;
+	font-weight: 1000;
+}
+body.mobile-edition .ban-screen-title p {
+	max-width: 255px;
+	font-size: 9.5px;
+	line-height: 1.35;
+}
+body.mobile-edition .ban-screen-actions strong {
+	color: #ffadb4;
+	font-size: 10.5px;
+}
+
+body.mobile-edition .ban-groups {
+	display: grid;
+	gap: 10px;
+}
+body.mobile-edition .mobile-ban-selector,
+body.mobile-edition .mobile-ban-results {
+	padding: 10px;
+	border: 1px solid #303946;
+	border-radius: 13px;
+	background: #10151c;
+}
+body.mobile-edition .mobile-ban-selector-head,
+body.mobile-edition .mobile-ban-results-head {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 9px;
+}
+body.mobile-edition .mobile-ban-selector-head > div {
+	display: grid;
+	gap: 2px;
+	min-width: 0;
+}
+body.mobile-edition .mobile-ban-selector-head strong,
+body.mobile-edition .mobile-ban-results-head strong {
+	font-size: 14px;
+	font-weight: 1000;
+}
+body.mobile-edition .mobile-ban-selector-head span,
+body.mobile-edition .mobile-ban-results-head span {
+	color: #8e99a8;
+	font-size: 9.5px;
+	font-weight: 800;
+	line-height: 1.35;
+}
+body.mobile-edition .mobile-ban-clear {
+	flex: 0 0 auto;
+	min-height: 32px;
+	padding: 5px 8px;
+	border: 1px solid #495565;
+	border-radius: 9px;
+	background: #1a212b;
+	color: #dce3ec;
+	font-size: 10px;
+	font-weight: 900;
+}
+body.mobile-edition .mobile-ban-clear:disabled {
+	opacity: .38;
+}
+body.mobile-edition .mobile-ban-oath-row {
+	display: grid;
+	grid-template-columns: 58px minmax(0, 1fr);
+	gap: 7px;
+	align-items: start;
+}
+body.mobile-edition .mobile-ban-oath-row + .mobile-ban-oath-row {
+	margin-top: 7px;
+	padding-top: 7px;
+	border-top: 1px solid rgba(255,255,255,.055);
+}
+body.mobile-edition .mobile-ban-oath-row > strong {
+	padding-top: 6px;
+	font-size: 10.5px;
+	font-weight: 1000;
+}
+body.mobile-edition .mobile-ban-oath-row.core > strong { color: #f1d15f; }
+body.mobile-edition .mobile-ban-oath-row.support > strong { color: #70c4ff; }
+body.mobile-edition .mobile-ban-oath-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+body.mobile-edition .mobile-ban-oath-chip {
+	min-height: 31px;
+	padding: 5px 8px;
+	border: 1px solid #394351;
+	border-radius: 8px;
+	background: #171d26;
+	color: #d1d7df;
+	font-size: 10.5px;
+	font-weight: 900;
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
+}
+body.mobile-edition .mobile-ban-oath-row.core .mobile-ban-oath-chip.is-active {
+	border-color: rgba(241, 209, 95, .92);
+	background: rgba(113, 91, 24, .48);
+	color: #ffe783;
+	box-shadow: inset 0 0 0 1px rgba(255,235,148,.10);
+}
+body.mobile-edition .mobile-ban-oath-row.support .mobile-ban-oath-chip.is-active {
+	border-color: rgba(112, 196, 255, .92);
+	background: rgba(28, 79, 116, .54);
+	color: #a8ddff;
+	box-shadow: inset 0 0 0 1px rgba(176,222,255,.10);
+}
+body.mobile-edition .mobile-ban-exception-note {
+	margin: 8px 1px 0 65px;
+	color: #7f8a99;
+	font-size: 9px;
+	font-weight: 750;
+}
+body.mobile-edition .mobile-ban-results {
+	background: linear-gradient(180deg, rgba(239,107,115,.035), #10151c 24%);
+}
+body.mobile-edition .mobile-ban-results-list {
+	display: grid;
+	gap: 9px;
+}
+body.mobile-edition .mobile-ban-result-group {
+	padding: 8px;
+	border: 1px solid #343e4b;
+	border-radius: 11px;
+	background: #0d1218;
+}
+body.mobile-edition .mobile-ban-result-group.core {
+	border-color: rgba(241, 209, 95, .30);
+	background: linear-gradient(90deg, rgba(241,209,95,.045), #0d1218 38%);
+}
+body.mobile-edition .mobile-ban-result-group.support {
+	border-color: rgba(112, 196, 255, .28);
+	background: linear-gradient(90deg, rgba(112,196,255,.04), #0d1218 38%);
+}
+body.mobile-edition .mobile-ban-result-group-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 7px;
+}
+body.mobile-edition .mobile-ban-result-group-head h3 {
+	margin: 0;
+	font-size: 15px;
+	font-weight: 1000;
+}
+body.mobile-edition .mobile-ban-result-group.core .mobile-ban-result-group-head h3 { color: #f1d15f; }
+body.mobile-edition .mobile-ban-result-group.support .mobile-ban-result-group-head h3 { color: #70c4ff; }
+body.mobile-edition .mobile-ban-result-group-head span {
+	color: #8f9baa;
+	font-size: 10.5px;
+	font-weight: 900;
+}
+body.mobile-edition .mobile-ban-result-operator-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 7px 5px;
+}
+body.mobile-edition .mobile-ban-result-operator-card {
+	position: relative;
+	display: grid;
+	justify-items: center;
+	align-content: start;
+	gap: 4px;
+	min-width: 0;
+	padding: 4px 3px 6px;
+	border: 1px solid #4a3b40;
+	border-radius: 9px;
+	background: rgba(83, 31, 37, .18);
+	color: #eadadd;
+}
+body.mobile-edition .mobile-ban-result-operator-image {
+	display: grid;
+	place-items: center;
+	overflow: hidden;
+	width: min(68px, 100%);
+	aspect-ratio: 1;
+	border: 2px solid var(--stage-color);
+	border-radius: 8px;
+	background: #090d12;
+	filter: grayscale(.20);
+}
+body.mobile-edition .mobile-ban-result-operator-image img,
+body.mobile-edition .mobile-ban-result-operator-image .image-fallback {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+body.mobile-edition .mobile-ban-result-operator-name {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 10px;
+	font-weight: 1000;
+	line-height: 1.2;
+	text-align: center;
+}
+body.mobile-edition .mobile-ban-result-empty {
+	display: grid;
+	place-items: center;
+	min-height: 110px;
+	padding: 12px;
+	border: 1px dashed #35404d;
+	border-radius: 10px;
+	color: #818d9e;
+	font-size: 11px;
+	font-weight: 800;
+	text-align: center;
+}
+body.mobile-edition .mobile-ban-result-empty.compact {
+	grid-column: 1 / -1;
+	min-height: 66px;
+}
+body.mobile-edition .effect-trigger {
+	color: #f0d77b;
+	font-weight: 1000;
+}
+@media (max-width: 350px) {
+	body.mobile-edition .mobile-ban-result-operator-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+	body.mobile-edition .mobile-ban-oath-row {
+		grid-template-columns: 1fr;
+	}
+	body.mobile-edition .mobile-ban-oath-row > strong {
+		padding-top: 0;
+	}
+	body.mobile-edition .mobile-ban-exception-note {
+		margin-left: 0;
+	}
+}
+
 </style>
 </head>
 <body class="mobile-edition">
@@ -5952,8 +6227,8 @@ body.mobile-edition .mobile-sim-action-row .selection-summary {
 		<header class="topbar">
 			<div class="brand">
 				<div>
-					<div class="mobile-brand-title"><h1>위수 협의</h1><span class="mobile-version-badge">모바일 v1.1</span></div>
-					<p>맹약 / 하반기 · 전체 23맹약 / 112오퍼레이터</p>
+					<div class="mobile-brand-title"><h1>위수 협의</h1><span class="mobile-version-badge">모바일 v1.2</span></div>
+					<p>맹약 / 하반기 · 전체 23맹약 / 112오퍼레이터 · [마지막 업데이트 2026-08-28]</p>
 				</div>
 			</div>
 			<div class="topbar-copyright">
@@ -6161,8 +6436,8 @@ body.mobile-edition .mobile-sim-action-row .selection-summary {
 			<header class="ban-screen-head">
 				<div class="ban-screen-title">
 					<span class="eyebrow">BAN ROSTER</span>
-					<h2>오퍼레이터 밴</h2>
-					<p>맹약별 목록 · 오퍼레이터를 탭하면 즉시 밴 / 해제</p>
+					<h2 id="ban-screen-title">밴</h2>
+					<p>밴할 맹약을 선택하면 오퍼레이터의 모든 맹약을 기준으로 자동 계산됩니다.</p>
 				</div>
 				<div class="ban-screen-actions">
 					<strong id="ban-screen-count">0 밴</strong>
@@ -6176,7 +6451,7 @@ body.mobile-edition .mobile-sim-action-row .selection-summary {
 	<section id="reset-confirm-modal" class="reset-confirm-modal" aria-hidden="true">
 		<div class="reset-confirm-card" role="dialog" aria-modal="true" aria-labelledby="reset-confirm-title">
 			<h2 id="reset-confirm-title">전체 초기화됩니다.</h2>
-			<p>선택한 오퍼레이터와 밴 상태가 모두 초기화됩니다.</p>
+			<p>선택한 오퍼레이터와 밴 맹약, 변형체 효과, 인사부 문서가 모두 초기화됩니다.</p>
 			<div class="reset-confirm-actions">
 				<button id="reset-confirm-yes" class="reset-confirm-yes" type="button">O</button>
 				<button id="reset-confirm-no" class="reset-confirm-no" type="button">X</button>
@@ -6185,7 +6460,7 @@ body.mobile-edition .mobile-sim-action-row .selection-summary {
 	</section>
 
 	<div id="mobile-selection-dock" class="mobile-selection-dock" aria-label="선택 상태">
-		<button id="mobile-dock-ban" class="mobile-dock-ban" type="button"><span>밴</span><strong id="mobile-dock-ban-count">0</strong></button>
+		<button id="mobile-dock-ban" class="mobile-dock-ban" type="button"><span id="mobile-dock-ban-label">밴</span><strong id="mobile-dock-ban-count" hidden>0</strong></button>
 		<div><strong id="mobile-dock-count">0/8</strong><span>선택</span></div>
 		<div><strong id="mobile-dock-oaths">0</strong><span>활성 맹약</span></div>
 		<button id="mobile-dock-reset" class="mobile-dock-reset" type="button">전체 초기화</button>
@@ -8566,6 +8841,7 @@ const state = {
 	selectedStage: null,
 	selectedTrait: null,
 	selectedOperators: new Set(),
+	selectedBanOaths: new Set(),
 	bannedOperators: new Set(),
 	focusedOperator: null,
 	selectedStrategy: null,
@@ -8577,9 +8853,6 @@ const state = {
 
 const oathByName = new Map(oaths.map(oath => [oath.name, oath]));
 const operatorById = new Map(operators.map(operator => [operator.id, operator]));
-const banCardCache = new Map();
-const banGroupCountCache = new Map();
-const banGroupMemberIds = new Map();
 
 const dom = {
 	tabs: [...document.querySelectorAll('.tab-button')],
@@ -8634,6 +8907,7 @@ const dom = {
 	mobileDockCount: document.querySelector('#mobile-dock-count'),
 	mobileDockOaths: document.querySelector('#mobile-dock-oaths'),
 	mobileDockBan: document.querySelector('#mobile-dock-ban'),
+	mobileDockBanLabel: document.querySelector('#mobile-dock-ban-label'),
 	mobileDockBanCount: document.querySelector('#mobile-dock-ban-count'),
 	mobileDockReset: document.querySelector('#mobile-dock-reset'),
 	banModal: document.querySelector('#ban-modal'),
@@ -8641,6 +8915,7 @@ const dom = {
 	resetConfirmModal: document.querySelector('#reset-confirm-modal'),
 	resetConfirmYes: document.querySelector('#reset-confirm-yes'),
 	resetConfirmNo: document.querySelector('#reset-confirm-no'),
+	banScreenTitle: document.querySelector('#ban-screen-title'),
 	banScreenCount: document.querySelector('#ban-screen-count'),
 	banScreenClose: document.querySelector('#ban-screen-close')
 };
@@ -8764,6 +9039,27 @@ const operatorTriggerFilters = [
 	{ value: '전투 중', label: '전투 중' },
 	{ value: '쓰러질 시', label: '쓰러질 시' }
 ];
+
+const effectTriggerLabels = [
+	'휴식 기간 진입 시',
+	'휴식 시간 진입 시',
+	'휴식 기간 종료 시',
+	'휴식 시간 종료 시',
+	'전투 중 쓰러질 시',
+	'전투 시작 시',
+	'판매 시',
+	'획득 시',
+	'갱신 시',
+	'배치 시',
+	'전투 중',
+	'쓰러질 시'
+].sort((a, b) => b.length - a.length);
+const effectTriggerPattern = new RegExp(effectTriggerLabels.map(label => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'g');
+
+function highlightEffectTriggers(effectHtml) {
+	return String(effectHtml || '').replace(effectTriggerPattern, match => `<strong class="effect-trigger">${match}</strong>`);
+}
+
 
 function operatorHasTrigger(operator, trigger) {
 	return operator.traitDescription.includes(`&lt;${trigger}&gt;`);
@@ -9257,7 +9553,7 @@ function focusOperator(operator, openModal = true, anchorElement = null) {
 			<div class="detail-effect-column">
 				<div class="detail-effect-box">
 					<span class="detail-effect-label">특질 효과</span>
-					<p>${operator.traitDescription}</p>
+					<p>${highlightEffectTriggers(operator.traitDescription)}</p>
 				</div>
 			</div>
 		</div>
@@ -9301,71 +9597,40 @@ function toggleOperator(operator, anchorElement = null) {
 
 function updateBanCounters() {
 	const count = state.bannedOperators.size;
-	if (dom.mobileDockBanCount) dom.mobileDockBanCount.textContent = count;
-	if (dom.banScreenCount) dom.banScreenCount.textContent = `${count} 밴`;
-}
-
-function rebuildBanCardCache() {
-	banCardCache.clear();
-	banGroupCountCache.clear();
-	banGroupMemberIds.clear();
-	if (!dom.banGroups) return;
-	for (const card of dom.banGroups.querySelectorAll('.ban-operator-card')) {
-		const id = card.dataset.banOperatorId;
-		if (!banCardCache.has(id)) banCardCache.set(id, []);
-		banCardCache.get(id).push(card);
+	const hasBans = count > 0;
+	if (dom.mobileDockBanLabel) dom.mobileDockBanLabel.textContent = hasBans ? '밴 목록' : '밴';
+	if (dom.mobileDockBanCount) {
+		dom.mobileDockBanCount.textContent = count;
+		dom.mobileDockBanCount.hidden = !hasBans;
 	}
-	for (const group of dom.banGroups.querySelectorAll('.ban-group[data-ban-oath]')) {
-		const oathName = group.dataset.banOath;
-		const count = group.querySelector('[data-ban-group-count]');
-		if (count) banGroupCountCache.set(oathName, count);
-		banGroupMemberIds.set(oathName, [...group.querySelectorAll('.ban-operator-card')].map(card => card.dataset.banOperatorId));
+	if (dom.banScreenTitle) dom.banScreenTitle.textContent = hasBans ? '밴 목록' : '밴';
+	if (dom.banScreenCount) {
+		dom.banScreenCount.textContent = state.selectedBanOaths.size
+			? `선택 ${state.selectedBanOaths.size}맹약 · ${count}밴`
+			: '맹약 선택';
 	}
 }
 
-function updateBanGroupCount(oathName) {
-	const countElement = banGroupCountCache.get(oathName);
-	const memberIds = banGroupMemberIds.get(oathName);
-	if (!countElement || !memberIds) return;
-	let count = 0;
-	for (const id of memberIds) if (state.bannedOperators.has(id)) count += 1;
-	countElement.textContent = `${count} 밴`;
-}
-
-function updateBanGroupCountsForOperator(operator) {
-	for (const oathName of operator.oaths) updateBanGroupCount(oathName);
-}
-
-function refreshBanSelectionForOperator(operatorId) {
-	const banned = state.bannedOperators.has(operatorId);
-	const cards = banCardCache.get(operatorId) || [];
-	for (const card of cards) {
-		card.classList.toggle('is-banned', banned);
-		card.setAttribute('aria-pressed', banned ? 'true' : 'false');
+function recomputeBannedOperators() {
+	const nextBanned = new Set();
+	for (const operator of operators) {
+		if (!operator.oaths?.length) continue;
+		if (operator.oaths.every(oathName => state.selectedBanOaths.has(oathName))) {
+			nextBanned.add(operator.id);
+		}
 	}
-}
 
+	state.bannedOperators.clear();
+	for (const id of nextBanned) state.bannedOperators.add(id);
 
-function updateSelectedCountersOnly() {
-	const count = state.selectedOperators.size;
-	if (dom.selectedCount) dom.selectedCount.textContent = count;
-	if (dom.selectedCountBottom) dom.selectedCountBottom.textContent = count;
-	if (dom.mobileDockCount) dom.mobileDockCount.textContent = `${count}/8`;
-}
-
-function toggleBan(operator) {
-	const wasSelected = state.selectedOperators.has(operator.id);
-	if (state.bannedOperators.has(operator.id)) {
-		state.bannedOperators.delete(operator.id);
-	} else {
-		state.bannedOperators.add(operator.id);
-		if (wasSelected) state.selectedOperators.delete(operator.id);
+	for (const id of [...state.selectedOperators]) {
+		if (state.bannedOperators.has(id)) state.selectedOperators.delete(id);
 	}
-	// Hot path: update only visible ban UI. Avoid DOM searches and hidden dock work per tap.
-	if (dom.banScreenCount) dom.banScreenCount.textContent = `${state.bannedOperators.size} 밴`;
-	if (wasSelected) updateSelectedCountersOnly();
-	refreshBanSelectionForOperator(operator.id);
-	updateBanGroupCountsForOperator(operator);
+	if (state.focusedOperator && state.bannedOperators.has(state.focusedOperator)) {
+		state.focusedOperator = null;
+		closeOperatorDetail();
+	}
+	updateBanCounters();
 }
 
 const banOathOrder = [
@@ -9373,53 +9638,92 @@ const banOathOrder = [
 	'정밀', '신속', '기민', '아케인', '고수', '조력', '예견', '기적', '투자자', '기습',
 	'불굴', '조화', '협동방어', '독행'
 ];
+const nonBannableOaths = new Set(['조화', '협동방어']);
+const selectableBanOathOrder = banOathOrder.filter(name => !nonBannableOaths.has(name));
+
+function mobileBanOperatorCardHtml(operator) {
+	return `
+		<article class="mobile-ban-result-operator-card" data-stage="${operator.stage}" title="${operator.name}">
+			<div class="mobile-ban-result-operator-image">${operatorImageOrFallback(operator)}</div>
+			<span class="mobile-ban-result-operator-name">${operator.name}</span>
+		</article>`;
+}
+
+function mobileBanResultGroupHtml(oathName) {
+	const members = operators
+		.filter(operator => state.bannedOperators.has(operator.id) && operator.oaths.includes(oathName))
+		.sort((a, b) => compareOperatorsForBanOath(a, b, oathName));
+	const typeClass = oathByName.get(oathName)?.type === 'core' ? 'core' : 'support';
+	return `
+		<section class="mobile-ban-result-group ${typeClass}">
+			<header class="mobile-ban-result-group-head">
+				<h3>${oathName}</h3>
+				<span>${members.length}명</span>
+			</header>
+			<div class="mobile-ban-result-operator-grid">
+				${members.length ? members.map(mobileBanOperatorCardHtml).join('') : '<div class="mobile-ban-result-empty compact">이 맹약에서 밴되는 오퍼레이터 없음</div>'}
+			</div>
+		</section>`;
+}
 
 function renderBanGroups() {
 	if (!dom.banGroups) return;
-	const coreNames = banOathOrder.filter(name => oathByName.get(name)?.type === 'core');
-	const supportNames = banOathOrder.filter(name => oathByName.get(name)?.type !== 'core');
-	const renderBanSection = (names, label, typeClass) => `
-		<div class="ban-oath-divider ban-${typeClass}"><span>${label}</span></div>
-		${names.map(oathName => {
-			const members = operators
-				.filter(operator => operator.oaths.includes(oathName))
-				.sort((a, b) => compareOperatorsForBanOath(a, b, oathName));
-			if (!members.length) return '';
-			const bannedCount = members.reduce((sum, operator) => sum + (state.bannedOperators.has(operator.id) ? 1 : 0), 0);
-			let previousStage = null;
-			const memberCards = members.map(operator => {
-				const stageStart = previousStage !== null && previousStage !== operator.stage;
-				previousStage = operator.stage;
-				return `
-					<button class="ban-operator-card${stageStart ? ' ban-stage-start' : ''}${state.bannedOperators.has(operator.id) ? ' is-banned' : ''}" data-ban-operator-id="${operator.id}" data-stage="${operator.stage}" type="button" aria-pressed="${state.bannedOperators.has(operator.id) ? 'true' : 'false'}" title="${operator.name}">
-						<div class="ban-operator-image">${operatorImageOrFallback(operator)}</div>
-						<span class="ban-operator-name">${operator.name}</span>
-					</button>`;
-			}).join('');
-			return `
-				<section class="ban-group ban-${typeClass}" data-ban-oath="${oathName}">
-					<button class="ban-group-head" data-ban-group-toggle type="button" aria-expanded="false">
-						<div class="ban-group-labels"><h3>${oathName}</h3><span class="ban-group-count" data-ban-group-count>${bannedCount} 밴</span></div>
-						<span class="ban-group-arrow" aria-hidden="true">⌄</span>
-					</button>
-					<div class="ban-operator-grid">${memberCards}</div>
-				</section>
-			`;
-		}).join('')}
-	`;
-	dom.banGroups.innerHTML = renderBanSection(coreNames, '핵심 맹약', 'core') + renderBanSection(supportNames, '부가 맹약', 'support');
-	rebuildBanCardCache();
-	refreshBanSelectionState();
+	const coreNames = selectableBanOathOrder.filter(name => oathByName.get(name)?.type === 'core');
+	const supportNames = selectableBanOathOrder.filter(name => oathByName.get(name)?.type !== 'core');
+	const selectedNames = selectableBanOathOrder.filter(name => state.selectedBanOaths.has(name));
+	const chipHtml = oathName => `
+		<button class="mobile-ban-oath-chip${state.selectedBanOaths.has(oathName) ? ' is-active' : ''}" data-ban-oath-select="${oathName}" type="button" aria-pressed="${state.selectedBanOaths.has(oathName)}">${oathName}</button>`;
+	const resultHtml = !selectedNames.length
+		? '<div class="mobile-ban-result-empty">밴할 맹약을 선택하면 결과가 여기에 표시됩니다.</div>'
+		: `<div class="mobile-ban-results-list">${selectedNames.map(mobileBanResultGroupHtml).join('')}</div>`;
+
+	dom.banGroups.innerHTML = `
+		<section class="mobile-ban-selector">
+			<div class="mobile-ban-selector-head">
+				<div><strong>밴 맹약 선택</strong><span>모든 맹약이 선택된 오퍼레이터 자동 밴</span></div>
+				<button class="mobile-ban-clear" data-ban-clear type="button"${state.selectedBanOaths.size ? '' : ' disabled'}>전체 해제</button>
+			</div>
+			<div class="mobile-ban-oath-row core">
+				<strong>핵심 맹약</strong>
+				<div class="mobile-ban-oath-chips">${coreNames.map(chipHtml).join('')}</div>
+			</div>
+			<div class="mobile-ban-oath-row support">
+				<strong>부가 맹약</strong>
+				<div class="mobile-ban-oath-chips">${supportNames.map(chipHtml).join('')}</div>
+			</div>
+			<p class="mobile-ban-exception-note">조화 / 협동방어는 밴 맹약으로 등장하지 않습니다.</p>
+		</section>
+		<section class="mobile-ban-results">
+			<div class="mobile-ban-results-head">
+				<strong>밴 결과</strong>
+				<span>맹약별 표시 · 중복 제외 실제 밴 ${state.bannedOperators.size}명</span>
+			</div>
+			${resultHtml}
+		</section>`;
+	updateBanCounters();
+}
+
+function toggleMobileBanOath(oathName) {
+	if (!oathName || nonBannableOaths.has(oathName)) return;
+	if (state.selectedBanOaths.has(oathName)) state.selectedBanOaths.delete(oathName);
+	else state.selectedBanOaths.add(oathName);
+	recomputeBannedOperators();
+	renderBanGroups();
+}
+
+function clearMobileBanOaths() {
+	state.selectedBanOaths.clear();
+	recomputeBannedOperators();
+	renderBanGroups();
 }
 
 function refreshBanSelectionState() {
 	updateBanCounters();
-	for (const operatorId of banCardCache.keys()) refreshBanSelectionForOperator(operatorId);
-	for (const oathName of banGroupCountCache.keys()) updateBanGroupCount(oathName);
 }
 
 function openBanScreen() {
 	if (!dom.banModal) return;
+	recomputeBannedOperators();
 	renderBanGroups();
 	dom.banModal.classList.add('is-open');
 	dom.banModal.setAttribute('aria-hidden', 'false');
@@ -9432,7 +9736,6 @@ function closeBanScreen() {
 	dom.banModal.setAttribute('aria-hidden', 'true');
 	document.body.classList.remove('ban-open');
 	updateBanCounters();
-	// Let the ban screen disappear first, then sync the normal roster/oath UI once.
 	requestAnimationFrame(() => renderSelectionState());
 }
 
@@ -9450,6 +9753,7 @@ function closeResetConfirm() {
 
 function performFullReset() {
 	state.selectedOperators.clear();
+	state.selectedBanOaths.clear();
 	state.bannedOperators.clear();
 	state.isomorphicBonusOaths = [];
 	state.hrDocumentActive = false;
@@ -9667,7 +9971,7 @@ function renderMobileStrategyBar() {
 	dom.mobileStrategyCurrent.innerHTML = `
 		<div class="strategy-mini-image">${imageOrFallback(strategy.image, strategy.name)}</div>
 		<strong>${strategy.name}</strong>
-		<p>${strategy.effect}</p>
+		<p>${highlightEffectTriggers(strategy.effect)}</p>
 	`;
 	dom.mobileStrategyChange.textContent = '변경';
 }
@@ -9974,61 +10278,13 @@ function bindEvents() {
 	if (dom.mobileDockBan) dom.mobileDockBan.addEventListener('click', openBanScreen);
 	if (dom.banScreenClose) dom.banScreenClose.addEventListener('click', closeBanScreen);
 	if (dom.banGroups) {
-		let banPointerStart = null;
-		let lastFastBanAt = 0;
-
-		dom.banGroups.addEventListener('pointerdown', event => {
-			if (event.pointerType !== 'touch' && event.pointerType !== 'pen') return;
-			const card = event.target.closest('.ban-operator-card');
-			if (!card) {
-				banPointerStart = null;
-				return;
-			}
-			banPointerStart = {
-				pointerId: event.pointerId,
-				operatorId: card.dataset.banOperatorId,
-				x: event.clientX,
-				y: event.clientY
-			};
-		});
-
-		dom.banGroups.addEventListener('pointerup', event => {
-			if (!banPointerStart || event.pointerId !== banPointerStart.pointerId) return;
-			const start = banPointerStart;
-			banPointerStart = null;
-			if (event.pointerType !== 'touch' && event.pointerType !== 'pen') return;
-			const card = event.target.closest('.ban-operator-card');
-			if (!card || card.dataset.banOperatorId !== start.operatorId) return;
-			const dx = event.clientX - start.x;
-			const dy = event.clientY - start.y;
-			if ((dx * dx + dy * dy) > 144) return; // scrolling / dragging: do not ban
-			event.preventDefault();
-			const operator = operatorById.get(start.operatorId);
-			if (!operator) return;
-			lastFastBanAt = performance.now();
-			toggleBan(operator);
-		}, { passive: false });
-
-		dom.banGroups.addEventListener('pointercancel', () => {
-			banPointerStart = null;
-		});
-
 		dom.banGroups.addEventListener('click', event => {
-			const toggle = event.target.closest('[data-ban-group-toggle]');
-			if (toggle) {
-				const group = toggle.closest('.ban-group');
-				if (!group) return;
-				const open = !group.classList.contains('is-open');
-				group.classList.toggle('is-open', open);
-				toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+			const oathChip = event.target.closest('[data-ban-oath-select]');
+			if (oathChip) {
+				toggleMobileBanOath(oathChip.dataset.banOathSelect);
 				return;
 			}
-			const card = event.target.closest('.ban-operator-card');
-			if (!card) return;
-			// Touch/pen was already handled on pointerup, before Safari's synthetic click.
-			if (performance.now() - lastFastBanAt < 600) return;
-			const operator = operatorById.get(card.dataset.banOperatorId);
-			if (operator) toggleBan(operator);
+			if (event.target.closest('[data-ban-clear]')) clearMobileBanOaths();
 		});
 	}
 
